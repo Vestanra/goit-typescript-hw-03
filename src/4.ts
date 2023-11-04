@@ -12,8 +12,8 @@ class Person {
     private name: string;
     private key: Key;
     constructor(key: Key, name: string) {
-        this.name = name;
-        this.key = new Key()
+      this.name = name;
+      this.key = key;
     }
 
     getKey() {
