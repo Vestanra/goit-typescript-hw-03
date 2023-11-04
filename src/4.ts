@@ -28,16 +28,16 @@ abstract class House {
     constructor(key: Key) {
       this.door = false;
       this.key = key;
-  }
+    };
 
     comeIn(person: Person) {
         if (this.door) {
             this.tenants.push(person)
-        }
-  }
-  
-  abstract openDoor(key: Key):void;
-}
+        };
+    };
+     
+    abstract openDoor(key: Key):void;
+};
 
 class MyHouse extends House {
   openDoor(key: Key){
@@ -47,17 +47,16 @@ class MyHouse extends House {
     } else {
       this.door = false
       console.log('The door is closed')
-    }
-  }
-}
+      };
+    };
+};
+
 
 const key = new Key();
 
 const house = new MyHouse(key);
 const person = new Person(key, "unknown");
-
 house.openDoor(person.getKey());
-
 house.comeIn(person);
 
 export {};
